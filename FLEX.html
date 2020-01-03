@@ -1,0 +1,102 @@
+<html>
+<head>
+  <title>Flex</title>
+    <script type="text/javascript" src="Southbulk/js/jquery-1.2.1.min.js"></script>
+
+</head>
+
+<body>
+<style>
+div.danger{
+
+width:100px;
+height:100px;
+background-color: #95CCC2;
+}
+div > h1{
+   padding-top:45%;
+   padding-left:15%;
+}
+
+</style>
+<div></div>
+<p>This is text from a another div.</p>
+<br />
+<form id="testform">
+Name<input value="" type="text" name="name">
+Email<input value="" type="text" name="email">
+Surname<input value="" type="text" name="surname">
+<input type="submit" value="submit"/>
+
+</form>
+
+
+
+<!-- $(“:submit”).click(function () {
+$(“img”).clone().insertAfter(“p”);           //cloning elements
+});
+
+  <script>
+$(document).ready(function() {
+$('div').load('lords.html');
+
+});
+
+
+ </script>-->
+
+  <script>
+$(document).ready(function() {
+$("#testform").submit(function(){
+//Code after form submitted
+$.post( "ajax.php",
+$("#testform").serialize(),
+function(data){
+alert(data);
+});
+return false;
+
+})
+
+});
+
+
+ </script>
+
+
+
+<!--
+  <script>
+$(document).ready(function() {
+$(':submit').click(function () {
+$('div').wrap('<div style=background-color:red;></div>');       // wrapping elemtn
+});
+
+});
+
+
+ </script>
+-->
+
+<!-- <script>
+ $(document).ready(function() {
+$('button').click(function(){
+$('.danger').fadeTo('slow', .55,
+function callback() {
+    alert('done');
+}
+
+
+)
+})
+
+});
+
+
+ </script>-->
+
+
+
+</body>
+
+</html>

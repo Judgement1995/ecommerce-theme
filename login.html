@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>MyPortfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" >
+<link rel="stylesheet" type="text/css"  media="all" href="css/font-awesome.min.css" />
+<script src="js/jquery-1.2.1.min.js"></script>
+</head>
+
+<body>
+<style>
+body{
+    background-image: url(img/sutirta-budiman-kjOBqwMUnWw-unsplash.jpg) ;
+    background-size: cover;
+    background-position: center center;  
+    background-repeat: no-repeat;
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+div{
+
+    display: flex;
+    flex-direction: column;
+    margin-left:15%;
+    margin-top: 5%;
+    padding: 20px;
+    width: 66.66666667%;
+    box-shadow: 0 2px 0 4px rgba(209, 156, 9, 0.1);
+   
+    
+}
+
+
+@media screen and (max-width: 600px) {
+div{
+    width: 100%;
+    margin-left: 0;
+}
+}
+label{
+    margin-bottom: 5px;
+padding: 4px;
+}
+p:not(.after-login){
+text-align: center;
+
+font-size: 22px;
+
+}
+p.after-login{
+     color: white;
+    font-size: 17px;
+}
+p.after-login a{
+     color: white;
+    font-size: 17px;
+}
+input{
+
+    margin-bottom: 15px;
+    width: 100%;
+}
+.form-control{
+    padding:10px;
+    border: 1px solid gainsboro;
+}
+button{
+    width: 16%;
+    padding: 5px;
+    background-color: #367fa9;
+    color: #fff;
+    border-color: #204d74;
+    cursor: pointer;
+}
+button a{
+  
+    color: #fff;
+    
+}
+span.help-block{
+    color: red;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+</style>
+<script type="text/javascript">
+
+
+
+
+</script>
+    <div class="">
+   
+            <label>Username</label>
+            <input type="text" placeholder="Enter your username" maxlength="10" class="form-control" id="user" name="username">
+            <span class="help-block" id="userErr"></span>
+             <br>
+             <label>Password</label>
+            <input type="password" placeholder="Enter your password" class="form-control" name="password" id="pass">
+            <span class="help-block" id="passErr"></span>
+            <br>
+            <button class="btn-control"   onclick="validate();">Login</button>
+            <p class="after-login">Don't have an account?<a href="">Sign up now </a> </p>
+            <p class="after-login">Forgot password ? <a href="">Reset now  </a> </p>
+
+
+     
+        
+    </div>
+    
+
+<script>
+
+function validate(){
+
+
+var username  = document.getElementById("user").value;
+var password  = document.getElementById("pass").value;
+
+if(username == ""){
+    document.getElementById("userErr").textContent = "Username cannot be empty";
+ 
+    username = false;
+   //alert(typeof(username))
+}else{
+    username = true;
+}
+if(password == ""){
+    document.getElementById("passErr").textContent = "Please enter your password";
+ 
+    password = false;
+   //alert(typeof(username))
+}else{
+    password = true;
+}
+
+if(username && password == true){
+    window.location="real.html";
+}
+
+
+
+}    
+
+
+
+</script>
+</body>
+</html>
